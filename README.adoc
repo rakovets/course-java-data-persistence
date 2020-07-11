@@ -1,5 +1,10 @@
 = course-java-data-persistence
 
+== Code of Conduct
+
+This project is governed by the link:.github/CODE_OF_CONDUCT.md[Code of Conduct].
+By participating, you are expected to uphold this code of conduct.
+
 == License
 
 The project is released under version 2.0 of the 
