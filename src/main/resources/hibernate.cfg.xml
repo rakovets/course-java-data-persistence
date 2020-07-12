@@ -1,0 +1,17 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mariadb://localhost:3306/hr</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">1234</property>
+        <property name="dialect">org.hibernate.dialect.MariaDB10Dialect</property>
+        <property name="hbm2ddl.auto">create-drop</property>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <mapping class="com.rakovets.course.datapersistence.example.dal.entity.Employee"/>
+    </session-factory>
+</hibernate-configuration>
