@@ -6,6 +6,7 @@
     <artifactId>course-java-data-persistence</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <modules>
+        <module>intro-hibernate</module>
         <module>mapping-association</module>
     </modules>
     <packaging>pom</packaging>
