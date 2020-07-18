@@ -1,9 +1,18 @@
 package com.rakovets.course.datapersistence.solution.jpa.dal.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "message")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Message {
     @Id
     @Column(name = "id")
@@ -13,28 +22,8 @@ public class Message {
     @Column(name = "message")
     private String message;
 
-    public Message() {
-        super();
-    }
-
     public Message(String message) {
         super();
-        this.message = message;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
         this.message = message;
     }
 

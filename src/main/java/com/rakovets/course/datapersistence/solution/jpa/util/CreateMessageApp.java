@@ -8,8 +8,10 @@ import javax.persistence.Persistence;
 
 public class CreateMessageApp {
     public static void main(String[] args) {
-        Message message = new Message("Goodbye!");
+        Message message = new Message("Hieee!");
         int messageId = 151;
+
+        Message newMessage = new Message();
 
         EntityManagerFactory entityManagerFactory =
                 Persistence.createEntityManagerFactory("EclipseLink");
