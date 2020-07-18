@@ -13,7 +13,7 @@
 
 * Сконфигурировать maven-проект.
 * Подключить _dependency_ *EclipseLink* - одной из реализаций *JPA*.
-* Настроить *EclipseLink* с помощью `persistence.xml`.
+[.line-through]#*# Настроить *EclipseLink* с помощью `persistence.xml`.
 
 == Task 3
 
