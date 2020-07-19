@@ -3,6 +3,10 @@ package com.rakovets.course.datapersistence.solution;
 import com.rakovets.course.datapersistence.solution.jpa.dal.dao.MessageDao;
 import com.rakovets.course.datapersistence.solution.jpa.dal.entity.MessageEntity;
 import com.rakovets.course.datapersistence.solution.jpa.util.DynamicEntityManagerFactoryUtil;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -12,23 +16,24 @@ public class TestMessageDao {
 
     @Test
     public void testFindMessageEntityById() {
-        EntityManager entityManager = DynamicEntityManagerFactoryUtil.getEntityManager();
-        entityManager.getTransaction().begin();
+        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
         MessageDao messageDao = new MessageDao();
         Assertions.assertEquals("Message{id=3, text='Welcome to hell'}",
                 messageDao.findMessageEntityById(3).toString());
-        entityManager.getTransaction().commit();
-        entityManager.close();
+        transaction.commit();
+        session.close();
     }
 
     @Test
     public void testSaveMessageDao() {
-        EntityManager entityManager = DynamicEntityManagerFactoryUtil.getEntityManager();
-        entityManager.getTransaction().begin();
-        MessageEntity messageEntity = new MessageEntity("Test");
+        SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
+        Session session = sessionFactory.openSession();
+        Transaction transaction = session.beginTransaction();
         MessageDao messageDao = new MessageDao();
-        messageDao.saveMessageEntity(messageEntity);
-        entityManager.getTransaction().commit();
-        entityManager.close();
+        messageDao.saveMessageEntity(new MessageEntity("Test"));
+        transaction.commit();
+        session.close();
     }
 }
