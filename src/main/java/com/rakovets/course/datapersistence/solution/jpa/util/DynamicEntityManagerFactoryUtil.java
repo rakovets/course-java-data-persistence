@@ -19,7 +19,7 @@ public class DynamicEntityManagerFactoryUtil {
         return entityManagerFactory.createEntityManager();
     }
 
-    void close() {
+    public static void close() {
         entityManagerFactory.close();
     }
 }
