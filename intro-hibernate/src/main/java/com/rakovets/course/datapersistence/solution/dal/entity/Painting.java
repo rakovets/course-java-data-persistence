@@ -10,19 +10,25 @@ public class Painting {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-    @Column(name = "paintingName")
-    String name;
-
     @Column(name = "authorName")
     String authorName;
+
+    @Column(name = "paintingName")
+    String name;
 
     public Painting() {
         super();
     }
 
-    public Painting(String name, String authorName) {
-        this.name = name;
+    public Painting(String authorName, String name) {
         this.authorName = authorName;
+        this.name = name;
+    }
+
+    public Painting(int id, String authorName, String name) {
+        this.id = id;
+        this.authorName = authorName;
+        this.name = name;
     }
 
     public int getId() {
