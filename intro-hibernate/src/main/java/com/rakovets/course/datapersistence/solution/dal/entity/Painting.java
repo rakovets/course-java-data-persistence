@@ -1,8 +1,19 @@
 package com.rakovets.course.datapersistence.solution.dal.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "painting")
 public class Painting {
+    @Id
+    @Column
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+
+    @Column(name = "paintingName")
     String name;
+
+    @Column(name = "authorName")
     String authorName;
 
     public Painting() {
