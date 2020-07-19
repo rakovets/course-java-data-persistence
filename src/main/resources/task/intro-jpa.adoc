@@ -17,7 +17,7 @@
 
 == Task 3
 
-* Создать класс `Message` с полями:
+* Создать класс `MessageEntity` с полями:
 ** `id`
 ** `text`,
 * произвести _mapping_ _class_ на _table_ с помощью аннотаций.
@@ -34,7 +34,7 @@ WARNING: Task 5 и Task 6 - выполнить в отдельном _commit_
 
 == Task 6
 
-Переписать класс `Message`, используя _lombok_-аннотации.
+Переписать класс `MessageEntity`, используя _lombok_-аннотации.
 
 == Task 7
 
