@@ -4,8 +4,6 @@ import com.rakovets.course.datapersistence.solution.jpa.dal.dao.MessageDao;
 import com.rakovets.course.datapersistence.solution.jpa.dal.entity.MessageEntity;
 import com.rakovets.course.datapersistence.solution.jpa.util.DynamicEntityManagerFactoryUtil;
 
-import java.util.List;
-
 public class CreateMessageApp {
     public static void main(String[] args) {
         MessageEntity messageEntity1 = new MessageEntity("Hello");
@@ -14,9 +12,9 @@ public class CreateMessageApp {
         MessageDao messageDao = new MessageDao();
 
         DynamicEntityManagerFactoryUtil.init("EclipseLink");
-        messageDao.save(messageEntity1);
-        messageDao.save(messageEntity2);
-        messageDao.save(messageEntity3);
+        messageDao.saveMessageEntity(messageEntity1);
+        messageDao.saveMessageEntity(messageEntity2);
+        messageDao.saveMessageEntity(messageEntity3);
         MessageEntity foundMessageEntityById = messageDao.findMessageEntityById(3);
         DynamicEntityManagerFactoryUtil.close();
 
