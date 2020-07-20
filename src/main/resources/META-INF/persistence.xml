@@ -16,4 +16,18 @@
             <property name="eclipselink.ddl-generation" value="create-tables"/>
         </properties>
     </persistence-unit>
+    <persistence-unit name="EclipseLinkH2" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>com.rakovets.course.datapersistence.solution.jpa.dal.entity.Message</class>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test-db" />
+            <property name="javax.persistence.jdbc.username" value="root" />
+            <property name="javax.persistence.jdbc.password" value="1234"/>
+            <property name="eclipselink.target-database" value="org.eclipse.persistence.platform.database.H2Platform"/>
+            <property name="eclipselink.ddl-generation" value="drop-create-tables" />
+            <property name="eclipselink.ddl-generation.output-mode" value="both" />
+            <property name="eclipselink.logging.level" value="info"/>
+        </properties>
+    </persistence-unit>
 </persistence>
