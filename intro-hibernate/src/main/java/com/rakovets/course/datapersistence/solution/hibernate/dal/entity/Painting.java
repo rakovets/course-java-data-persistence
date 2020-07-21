@@ -13,10 +13,10 @@ public class Painting {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "nameAuthor")
+    @Column(name = "authorName")
     private String nameAuthor;
 
-    public Painting(int id) {
+    public Painting() {
         super();
     }
 
@@ -48,5 +48,14 @@ public class Painting {
 
     public void setNameAuthor(String nameAuthor) {
         this.nameAuthor = nameAuthor;
+    }
+
+    @Override
+    public String toString() {
+        return "Painting{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", nameAuthor='" + nameAuthor + '\'' +
+                '}';
     }
 }
