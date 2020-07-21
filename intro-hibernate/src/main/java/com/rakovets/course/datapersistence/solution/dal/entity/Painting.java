@@ -59,8 +59,8 @@ public class Painting {
     public String toString() {
         return "Painting{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
                 ", authorName='" + authorName + '\'' +
+                ", name='" + name + '\'' +
                 '}';
     }
 }
