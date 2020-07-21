@@ -20,6 +20,11 @@ public class Painting {
         super();
     }
 
+    public Painting(String name, String nameAuthor) {
+        this.name = name;
+        this.nameAuthor = nameAuthor;
+    }
+
     public Painting(int id, String name, String nameAuthor) {
         this.id = id;
         this.name = name;
