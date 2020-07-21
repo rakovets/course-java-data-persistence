@@ -11,8 +11,8 @@
     </parent>
 
     <groupId>by.rakovets.course.datapersistence</groupId>
-    <artifactId>query-criteria</artifactId>
-    <name>Theme: "Queries with Criteria API</name>
+    <artifactId>query-hql</artifactId>
+    <name>Theme: "Queries with Hibernate Queries Language</name>
 
     <dependencies>
         <dependency>

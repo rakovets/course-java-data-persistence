@@ -14,6 +14,7 @@
         <module>mapping-association</module>
         <module>mapping-inheritance</module>
         <module>query-criteria</module>
+        <module>query-hql</module>
     </modules>
 
     <properties>
