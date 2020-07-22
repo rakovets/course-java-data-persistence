@@ -24,11 +24,11 @@ public class StarterPaintingApp {
         paintingDao.create(new Painting("Nikolai Gogol", "Dead Souls"), session);
         paintingDao.create(new Painting("Mikhail Bulgakov", "Heart of a Dog"), session);
         Painting read = paintingDao.read(1, session);
-        System.out.println(read);
-        read.setAuthorName("Fyodor Dostoevsky");
-        read.setName("Crime and Punishment");
-        paintingDao.update(read, session);
-        paintingDao.delete(read, session);
+//        System.out.println(read);
+//        read.setAuthorName("Fyodor Dostoevsky");
+//        read.setName("Crime and Punishment");
+//        paintingDao.update(read, session);
+//        paintingDao.delete(read, session);
         transaction.commit();
         session.close();
     }
