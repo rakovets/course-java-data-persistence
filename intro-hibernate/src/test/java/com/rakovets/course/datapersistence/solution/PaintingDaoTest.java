@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -58,9 +59,18 @@ public class PaintingDaoTest {
 
     @Test
     public void deletePaintingTest() {
-        Painting paintingFromDb = paintingDao.readPainting(1, session);
+        Painting painting = new Painting("work", "David");
+        paintingDao.createPainting(painting, session);
+        Painting paintingFromDb = paintingDao.readPainting(2, session);
         paintingDao.deletePainting(paintingFromDb, session);
-        Painting paintingAfterDelete = paintingDao.readPainting(1, session);
+        Painting paintingAfterDelete = paintingDao.readPainting(2, session);
         assertEquals(paintingAfterDelete, null);
+    }
+
+    @AfterAll
+    static void closeSession() {
+        transaction.commit();
+        session.close();
+        sessionFactory.close();
     }
 }
