@@ -1,0 +1,12 @@
+<hibernate-configuration xmlns="http://www.hibernate.org/xsd/orm/cfg">
+    <session-factory>
+        <property name="connection.driver_class">org.h2.Driver</property>
+        <property name="dialect">org.hibernate.dialect.H2Dialect</property>
+        <property name="connection.url">jdbc:h2:mem:hr</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">1234</property>
+        <property name="hbm2ddl.auto">create-drop</property>
+
+        <mapping class="com.rakovets.course.datapersistence.solution.hibernate.dal.entity.Painting"/>
+    </session-factory>
+</hibernate-configuration>

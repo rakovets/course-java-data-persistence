@@ -1,6 +1,7 @@
 package com.rakovets.course.datapersistence.solution.hibernate.dal.entity;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "painting")
@@ -62,5 +63,19 @@ public class Painting {
                 ", name='" + name + '\'' +
                 ", nameAuthor='" + nameAuthor + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Painting painting = (Painting) o;
+        return Objects.equals(name, painting.name) &&
+                Objects.equals(nameAuthor, painting.nameAuthor);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, nameAuthor);
     }
 }

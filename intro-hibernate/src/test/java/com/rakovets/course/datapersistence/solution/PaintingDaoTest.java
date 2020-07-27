@@ -4,23 +4,63 @@ import com.rakovets.course.datapersistence.solution.hibernate.dal.dao.PaintingDa
 import com.rakovets.course.datapersistence.solution.hibernate.dal.entity.Painting;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PaintingDaoTest {
-    Painting newPainting = new Painting(2, "Wave", "No name");
-    PaintingDao paintingDao = new PaintingDao();
+    static SessionFactory sessionFactory;
+    static Session session;
+    static Transaction transaction;
+    static PaintingDao paintingDao;
+    static Painting newPainting;
 
-    SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-    Session session = sessionFactory.openSession();
+
+
+    @BeforeAll
+    static void initDb() {
+        sessionFactory = new Configuration().configure().buildSessionFactory();
+        session = sessionFactory.openSession();
+        transaction = session.beginTransaction();
+
+        newPainting = new Painting("Wave", "No name");
+        paintingDao = new PaintingDao();
+        paintingDao.createPainting(newPainting, session);
+    }
 
     @Test
     public void getPaintingTest() {
+        Painting paintingFromDb = paintingDao.readPainting(1, session);
+        assertEquals(newPainting, paintingFromDb);
+    }
+
+    @Test
+    public void createPaintingTest() {
+        Painting painting = new Painting("work", "David");
+        paintingDao.createPainting(painting, session);
         Painting paintingFromDb = paintingDao.readPainting(2, session);
-        assertEquals(newPainting.getId(), paintingFromDb.getId());
-        assertEquals(newPainting.getName(), paintingFromDb.getName());
-        assertEquals(newPainting.getNameAuthor(), paintingFromDb.getNameAuthor());
+        assertEquals(painting, paintingFromDb);
+    }
+
+    @Test
+    public void updatePaintingTest() {
+        Painting paintingAfterUpdate = new Painting("Wave", "Karl");
+        Painting paintingFromDb = paintingDao.readPainting(1, session);
+        paintingDao.updatePainting(paintingFromDb, session);
+        paintingFromDb.setNameAuthor("Karl");
+        paintingDao.updatePainting(paintingFromDb, session);
+        Painting painting = paintingDao.readPainting(1, session);
+        assertEquals(paintingAfterUpdate, painting);
+    }
+
+    @Test
+    public void deletePaintingTest() {
+        Painting paintingFromDb = paintingDao.readPainting(1, session);
+        paintingDao.deletePainting(paintingFromDb, session);
+        Painting paintingAfterDelete = paintingDao.readPainting(1, session);
+        assertEquals(paintingAfterDelete, null);
     }
 }
