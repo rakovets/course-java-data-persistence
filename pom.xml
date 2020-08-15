@@ -13,6 +13,7 @@
         <module>mapping-basic</module>
         <module>mapping-association</module>
         <module>mapping-inheritance</module>
+        <module>query-criteria</module>
     </modules>
 
     <properties>
