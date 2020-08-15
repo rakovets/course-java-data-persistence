@@ -41,11 +41,11 @@ public class EmployeesTest {
         Transaction transaction = session.beginTransaction();
 
         Organization organization = new Organization();
-        organization.setName("Itransition");
+        organization.setName("Read Hat");
         session.save(organization);
 
         Employee employee = new Employee();
-        employee.setName("Igor Sukach");
+        employee.setName("Linus Torvalds");
         employee.setOrganization(organization);
         session.save(employee);
 
