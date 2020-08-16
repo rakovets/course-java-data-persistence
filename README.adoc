@@ -1,5 +1,18 @@
 = course-java-data-persistence
 
+Course "Data Persistence in Java"
+
+== Program
+
+1. Java DataBase Connectivity (JDBC)
+2. Data Access Object pattern (DAO pattern)
+3. Database Connection Pool (DBCP)
+4. Java Persistence API (JPA)
+    . with EclipseLink JPA
+    . with Hibernate ORM
+5. Hibernate
+    . Intro to Hibernate
+
 == Code of Conduct
 
 This project is governed by the link:.github/CODE_OF_CONDUCT.md[Code of Conduct].
