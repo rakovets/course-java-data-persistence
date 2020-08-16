@@ -1,0 +1,45 @@
+= Intro to JPA
+
+Реализовать приложение *Messager*.
+
+== Task 1
+
+Создать базу данных `chat` с таблицей `message`, в таблице должны храниться:
+
+* `id`
+* `message`
+
+== Task 2
+
+* Сконфигурировать maven-проект.
+* Подключить _dependency_ *EclipseLink* - одной из реализаций *JPA*.
+* Настроить *EclipseLink* с помощью `persistence.xml`.
+
+== Task 3
+
+* Создать класс `Message` с полями:
+** `id`
+** `text`,
+* произвести _mapping_ _class_ на _table_ с помощью аннотаций.
+
+== Task 4
+
+Протестировать сохранение и получение объекта из _database_ при помощи `EntityManager`
+
+WARNING: Task 5 и Task 6 - выполнить в отдельном _commit_
+
+== Task 5
+
+Подключить библиотеку *Lombok* к проекту.
+
+== Task 6
+
+Переписать класс `Message`, используя _lombok_-аннотации.
+
+== Task 7
+
+Создать _configuration_ проекта для тестов, используя базу данных *H2*.
+
+== Task 8
+
+Написать _junit_-тесты для сохранения и получения _entity_ из _database_.
