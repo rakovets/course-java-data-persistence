@@ -9,12 +9,13 @@
     <name>Course "Data Persistence in Java"</name>
 
     <modules>
+        <module>intro-jpa</module>
         <module>intro-hibernate</module>
         <module>mapping-basic</module>
         <module>mapping-association</module>
         <module>mapping-inheritance</module>
-        <module>query-criteria</module>
         <module>query-hql</module>
+        <module>query-criteria</module>
     </modules>
 
     <properties>
