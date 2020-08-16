@@ -1,0 +1,60 @@
+= Intro to Hibernate
+
+Каталог для картин.
+
+== Task 1
+
+Создать _database_ `catalog-painting`.
+
+== Task 2
+
+Создать _entity_ `Painting` с _fields_:
+
+* `id`
+* `name`
+* `authorName`
+
+== Task 3
+
+* Подключить dependency *Hibernate* - одной из реализаций JPA.
+* Настроить *Hibernate* с помощью `hibernate.cfg.xml`.
+
+== Task 4
+
+Произвести _mapping_ _class_ на _table_ с помощью аннотаций.
+
+== Task 5
+
+Создать abstract class `Dao<T>`, который имеет *CRUD*-методы.
+
+== Task 6
+
+Создать class `PaintingDao`, который реализует *CRUD*-методы используя `Session`. Все методы выполняются в одной `Transaction`.
+
+== Task 7
+
+Создать набор _unit_-тестов для тестирования class `PaintingDao`.
+
+== Task 8
+
+* Подключить dependency *Log4J* - библиотеки _logging_.
+* Настроить *Log4J* с помощью `log.properties` для вывода в консоль и файл.
+
+== Task 9
+
+Добавить _logging_ с различными _levels_:
+
+* `ERROR`
+* `WARN`
+* `INFO`
+* `DEBUG`
+* `ALL`
+
+для следующих событий:
+
+* начало `Transaction`
+* открытие `Session`
+* выполнение операции с помощью `Session`
+* закрытие `Session`
+* применение `Transaction` в случае успеха
+* откат `Transaction` в случае неудачи
