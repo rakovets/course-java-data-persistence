@@ -10,6 +10,7 @@
 
     <modules>
         <module>jdbc</module>
+        <module>dao</module>
         <module>intro-jpa</module>
         <module>intro-hibernate</module>
         <module>mapping-basic</module>
