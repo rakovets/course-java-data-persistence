@@ -5,3 +5,6 @@ out/
 
 # Apache Maven
 target/
+
+# Logging
+*.log
