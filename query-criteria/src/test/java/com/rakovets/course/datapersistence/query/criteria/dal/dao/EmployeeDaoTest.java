@@ -6,6 +6,7 @@ import com.rakovets.course.datapersistence.query.criteria.dal.util.EmployeeTestD
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -17,11 +18,10 @@ import static org.hamcrest.Matchers.*;
 
 
 public class EmployeeDaoTest {
-
-    private SessionFactory sessionFactory;
+    private static SessionFactory sessionFactory;
 
     @BeforeAll
-    public void initDb() {
+    static void initDb() {
         sessionFactory = new Configuration().configure().buildSessionFactory();
         EmployeeTestDataImporter.getInstance().importTestData(sessionFactory);
     }
@@ -148,7 +148,7 @@ public class EmployeeDaoTest {
     }
 
     @AfterAll
-    public void finish() {
+    static void finish() {
         sessionFactory.close();
     }
 }

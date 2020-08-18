@@ -50,7 +50,7 @@ public final class EmployeeDao {
         CriteriaBuilder cb = session.getCriteriaBuilder();
         CriteriaQuery<Employee> criteria = cb.createQuery(Employee.class);
         Root<Employee> employee = criteria.from(Employee.class);
-        Path<String> employeeFirstName = employee.get(Employee_.firstName);
+        Path<String> employeeFirstName = employee.get("firstName");
         criteria.select(employee)
                 .where(cb.equal(employeeFirstName, firstName));
         return session.createQuery(criteria).getResultList();
@@ -63,7 +63,7 @@ public final class EmployeeDao {
         CriteriaBuilder cb = session.getCriteriaBuilder();
         CriteriaQuery<Employee> criteria = cb.createQuery(Employee.class);
         Root<Employee> employee = criteria.from(Employee.class);
-        Path<LocalDate> employeeBirthday = employee.get(Employee_.birthday);
+        Path<LocalDate> employeeBirthday = employee.get("birthday");
 
         criteria.select(employee)
                 .orderBy(cb.asc(employeeBirthday));
@@ -80,9 +80,9 @@ public final class EmployeeDao {
         CriteriaBuilder cb = session.getCriteriaBuilder();
         CriteriaQuery<Employee> criteria = cb.createQuery(Employee.class);
         Root<Employee> employee = criteria.from(Employee.class);
-        Join<Employee, Organization> organization = employee.join(Employee_.organization);
+        Join<Employee, Organization> organization = employee.join("organization");
 
-        Path<String> orgName = organization.get(Organization_.name);
+        Path<String> orgName = organization.get("name");
         criteria.select(employee).where(cb.equal(orgName, organizationName));
 
         return session.createQuery(criteria).getResultList();
@@ -96,15 +96,15 @@ public final class EmployeeDao {
         CriteriaBuilder cb = session.getCriteriaBuilder();
         CriteriaQuery<Payment> criteria = cb.createQuery(Payment.class);
         Root<Payment> payment = criteria.from(Payment.class);
-        Join<Payment, Employee> receiver = payment.join(Payment_.receiver);
-        Join<Employee, Organization> organization = receiver.join(Employee_.organization);
+        Join<Payment, Employee> receiver = payment.join("receiver");
+        Join<Employee, Organization> organization = receiver.join("organization");
 
-        Path<String> orgName = organization.get(Organization_.name);
+        Path<String> orgName = organization.get("name");
         criteria.select(payment)
                 .where(cb.equal(orgName, organizationName))
                 .orderBy(
-                        cb.asc(receiver.get(Employee_.firstName)),
-                        cb.asc(payment.get(Payment_.amount))
+                        cb.asc(receiver.get("firstName")),
+                        cb.asc(payment.get("amount"))
                 );
 
         return session.createQuery(criteria).getResultList();
@@ -117,12 +117,12 @@ public final class EmployeeDao {
         CriteriaBuilder cb = session.getCriteriaBuilder();
         CriteriaQuery<Double> criteria = cb.createQuery(Double.class);
         Root<Payment> payment = criteria.from(Payment.class);
-        Join<Payment, Employee> receiver = payment.join(Payment_.receiver);
+        Join<Payment, Employee> receiver = payment.join("receiver");
 
-        criteria.select(cb.avg(payment.get(Payment_.amount)))
+        criteria.select(cb.avg(payment.get("amount")))
                 .where(cb.and(
-                        cb.equal(receiver.get(Employee_.firstName), firstName),
-                        cb.equal(receiver.get(Employee_.lastName), lastName)
+                        cb.equal(receiver.get("firstName"), firstName),
+                        cb.equal(receiver.get("lastName"), lastName)
                 ));
 
         List<Double> results = session.createQuery(criteria).getResultList();
@@ -137,11 +137,11 @@ public final class EmployeeDao {
         CriteriaBuilder cb = session.getCriteriaBuilder();
         CriteriaQuery<Object[]> criteria = cb.createQuery(Object[].class);
         Root<Payment> payment = criteria.from(Payment.class);
-        Join<Payment, Employee> receiver = payment.join(Payment_.receiver);
-        Join<Employee, Organization> organization = receiver.join(Employee_.organization);
+        Join<Payment, Employee> receiver = payment.join("receiver");
+        Join<Employee, Organization> organization = receiver.join("organization");
 
-        Path<String> orgName = organization.get(Organization_.name);
-        Expression<Double> avgPayment = cb.avg(payment.get(Payment_.amount));
+        Path<String> orgName = organization.get("name");
+        Expression<Double> avgPayment = cb.avg(payment.get("amount"));
         criteria.multiselect(orgName, avgPayment)
                 .groupBy(orgName)
                 .orderBy(cb.asc(orgName));
@@ -159,14 +159,14 @@ public final class EmployeeDao {
         CriteriaBuilder cb = session.getCriteriaBuilder();
         CriteriaQuery<Object[]> criteria = cb.createQuery(Object[].class);
         Root<Payment> payment = criteria.from(Payment.class);
-        Join<Payment, Employee> receiver = payment.join(Payment_.receiver);
+        Join<Payment, Employee> receiver = payment.join("receiver");
 
         Subquery<Double> subquery = criteria.subquery(Double.class);
         Root<Payment> subqueryRoot = subquery.from(Payment.class);
-        subquery.select(cb.avg(subqueryRoot.get(Payment_.amount)));
+        subquery.select(cb.avg(subqueryRoot.get("amount")));
 
-        Expression<Double> avgPayment = cb.avg(payment.get(Payment_.amount));
-        Path<String> employeeName = receiver.get(Employee_.firstName);
+        Expression<Double> avgPayment = cb.avg(payment.get("amount"));
+        Path<String> employeeName = receiver.get("firstName");
         criteria.multiselect(receiver, avgPayment)
                 .orderBy(cb.asc(employeeName))
                 .groupBy(employeeName)
