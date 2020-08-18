@@ -1,25 +1,22 @@
 package com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "employees")
-@Inheritance(strategy = InheritanceType.JOINED)
-@NoArgsConstructor
+@Table(name = "tps_managers")
 @ToString(callSuper = true)
-public abstract class EmployeeEntity extends BaseEntity {
-    @Column(name = "name")
+@PrimaryKeyJoinColumn(name = "employee_id")
+public class ManagerTpsEntity extends EmployeeTpsEntity {
     @Getter
     @Setter
-    private String name;
+    @Column(name = "number_of_idle_hours", nullable = false)
+    private Integer numberOfIdleHours;
 }

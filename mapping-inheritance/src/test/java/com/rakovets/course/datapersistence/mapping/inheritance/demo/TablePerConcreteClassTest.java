@@ -1,9 +1,9 @@
 package com.rakovets.course.datapersistence.mapping.inheritance.demo;
 
-import com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps.EmployeeEntity;
-import com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps.ManagerEntity;
-import com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps.ProgrammerEntity;
-import com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps.ProgrammingLanguage;
+import com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tpc.EmployeeTpcEntity;
+import com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tpc.ManagerTpcEntity;
+import com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tpc.ProgrammerTpcEntity;
+import com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tpc.ProgrammingLanguage;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-public class EmployeesTest {
+public class TablePerConcreteClassTest {
 
     private static SessionFactory SESSION_FACTORY;
 
@@ -28,12 +28,12 @@ public class EmployeesTest {
         Session session = SESSION_FACTORY.openSession();
         Transaction transaction = session.beginTransaction();
 
-        ProgrammerEntity programmerEntity = new ProgrammerEntity();
+        ProgrammerTpcEntity programmerEntity = new ProgrammerTpcEntity();
         programmerEntity.setName("Programmer");
         programmerEntity.setProgrammingLanguage(ProgrammingLanguage.JAVA);
         session.save(programmerEntity);
 
-        ManagerEntity managerEntity = new ManagerEntity();
+        ManagerTpcEntity managerEntity = new ManagerTpcEntity();
         managerEntity.setNumberOfIdleHours(7);
         managerEntity.setName("Manager");
         session.save(managerEntity);
@@ -47,14 +47,14 @@ public class EmployeesTest {
         Session session = SESSION_FACTORY.openSession();
         Transaction transaction = session.beginTransaction();
 
-        List<EmployeeEntity> employeeEntities = session
-                .createQuery("from EmployeeEntity", EmployeeEntity.class)
+        List<EmployeeTpcEntity> employeeEntities = session
+                .createQuery("from EmployeeTpcEntity", EmployeeTpcEntity.class)
                 .getResultList();
 
         employeeEntities.forEach(System.out::println);
 
-        List<ProgrammerEntity> programmerEntities = session
-                .createQuery("from ProgrammerEntity", ProgrammerEntity.class)
+        List<ProgrammerTpcEntity> programmerEntities = session
+                .createQuery("from ProgrammerTpcEntity", ProgrammerTpcEntity.class)
                 .getResultList();
 
         programmerEntities.forEach(System.out::println);

@@ -16,12 +16,12 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "employees")
+@Table(name = "tph_employees")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name = "employee_type", discriminatorType = DiscriminatorType.STRING)
 @NoArgsConstructor
 @ToString(callSuper = true)
-public abstract class EmployeeEntity extends BaseEntity {
+public abstract class EmployeeTphEntity extends BaseEntity {
     @Column(name = "name")
     @Getter
     @Setter

@@ -6,17 +6,20 @@ import lombok.ToString;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "managers")
+@Table(name = "tps_programmers")
 @ToString(callSuper = true)
 @PrimaryKeyJoinColumn(name = "employee_id")
-public class ManagerEntity extends EmployeeEntity {
+public class ProgrammerTpsEntity extends EmployeeTpsEntity {
     @Getter
     @Setter
-    @Column(name = "number_of_idle_hours", nullable = false)
-    private Integer numberOfIdleHours;
+    @Column(name = "programming_language")
+    @Enumerated(EnumType.STRING)
+    private ProgrammingLanguage programmingLanguage;
 }

@@ -1,22 +1,20 @@
-package com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps;
+package com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tph;
 
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "programmers")
 @ToString(callSuper = true)
-@PrimaryKeyJoinColumn(name = "employee_id")
-public class ProgrammerEntity extends EmployeeEntity {
+@DiscriminatorValue("programmer")
+public class ProgrammerTphEntity extends EmployeeTphEntity {
     @Getter
     @Setter
     @Column(name = "programming_language")

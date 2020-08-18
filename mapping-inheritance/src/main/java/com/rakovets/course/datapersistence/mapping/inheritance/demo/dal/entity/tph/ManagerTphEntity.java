@@ -7,17 +7,14 @@ import lombok.ToString;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
-import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "managers")
 @ToString(callSuper = true)
 @DiscriminatorValue("manager")
-public class ManagerEntity extends EmployeeEntity {
+public class ManagerTphEntity extends EmployeeTphEntity {
     @Getter
     @Setter
-    @Column(name = "number_of_idle_hours", nullable = false)
+    @Column(name = "number_of_idle_hours")
     private Integer numberOfIdleHours;
 }

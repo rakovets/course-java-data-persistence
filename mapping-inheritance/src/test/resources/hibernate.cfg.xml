@@ -15,21 +15,21 @@
 
         <!-- Table Per Concrete Class -->
         <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tpc.BaseEntity"/>
-        <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tpc.EmployeeEntity"/>
-        <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tpc.ManagerEntity"/>
-        <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tpc.ProgrammerEntity"/>
+        <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tpc.EmployeeTpcEntity"/>
+        <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tpc.ManagerTpcEntity"/>
+        <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tpc.ProgrammerTpcEntity"/>
 
         <!-- Table Per Hierarchy Class -->
         <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tph.BaseEntity"/>
-        <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tph.EmployeeEntity"/>
-        <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tph.ManagerEntity"/>
-        <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tph.ProgrammerEntity"/>
+        <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tph.EmployeeTphEntity"/>
+        <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tph.ManagerTphEntity"/>
+        <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tph.ProgrammerTphEntity"/>
 
         <!-- Table Per Subclass -->
         <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps.BaseEntity"/>
-        <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps.EmployeeEntity"/>
-        <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps.ManagerEntity"/>
-        <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps.ProgrammerEntity"/>
+        <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps.EmployeeTpsEntity"/>
+        <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps.ManagerTpsEntity"/>
+        <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.demo.dal.entity.tps.ProgrammerTpsEntity"/>
 
         <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.enemy.dal.entity.BaseEntity"/>
         <mapping class="com.rakovets.course.datapersistence.mapping.inheritance.enemy.dal.entity.EnemyEntity"/>
