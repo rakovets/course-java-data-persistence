@@ -9,6 +9,7 @@
     <name>Course "Data Persistence in Java"</name>
 
     <modules>
+        <module>jdbc</module>
         <module>intro-jpa</module>
         <module>intro-hibernate</module>
         <module>mapping-basic</module>
