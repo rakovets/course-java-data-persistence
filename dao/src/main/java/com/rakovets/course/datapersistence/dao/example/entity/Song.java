@@ -1,4 +1,4 @@
-package com.rakovets.course.datapersistence.dao.entity;
+package com.rakovets.course.datapersistence.dao.example.entity;
 
 public class Song {
     private long id;

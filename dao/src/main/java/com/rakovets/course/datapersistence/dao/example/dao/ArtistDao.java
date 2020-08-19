@@ -1,7 +1,7 @@
-package com.rakovets.course.datapersistence.dao.dao;
+package com.rakovets.course.datapersistence.dao.example.dao;
 
-import com.rakovets.course.datapersistence.dao.connection.ConnectionManager;
-import com.rakovets.course.datapersistence.dao.entity.Artist;
+import com.rakovets.course.datapersistence.dao.example.connection.ConnectionManager;
+import com.rakovets.course.datapersistence.dao.example.entity.Artist;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

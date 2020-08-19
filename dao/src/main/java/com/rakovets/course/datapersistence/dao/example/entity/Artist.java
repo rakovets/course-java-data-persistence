@@ -1,4 +1,4 @@
-package com.rakovets.course.datapersistence.dao.entity;
+package com.rakovets.course.datapersistence.dao.example.entity;
 
 import java.util.HashSet;
 import java.util.Set;

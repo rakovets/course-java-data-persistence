@@ -1,4 +1,4 @@
-package com.rakovets.course.datapersistence.dao.connection;
+package com.rakovets.course.datapersistence.dao.example.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
