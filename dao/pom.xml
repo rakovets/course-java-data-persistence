@@ -11,30 +11,14 @@
     </parent>
 
     <groupId>by.rakovets.course.datapersistence</groupId>
-    <artifactId>intro-hibernate</artifactId>
+    <artifactId>dao</artifactId>
     <packaging>jar</packaging>
-    <name>Theme: "Intro to Hibernate"</name>
+    <name>Theme: "Data Access Object"</name>
 
     <dependencies>
         <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.mariadb.jdbc</groupId>
             <artifactId>mariadb-java-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
         </dependency>
     </dependencies>
 </project>

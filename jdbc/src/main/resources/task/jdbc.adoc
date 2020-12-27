@@ -1,0 +1,58 @@
+= Music Store
+
+Реализовать _CLI_ клиента для работ c *Music Store*. Данные для него хранятся в _DBSM_, SQL script для создания необходимой структуры _DB_ приведен ниже:
+
+[source,sql]
+----
+CREATE DATABASE IF NOT EXISTS music_store;
+USE music_store;
+
+CREATE TABLE IF NOT EXISTS artist (
+    id INT AUTO_INCREMENT,
+    name VARCHAR(50) UNIQUE NOT NULL,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE IF NOT EXISTS song (
+    id INT AUTO_INCREMENT,
+    title VARCHAR(50) NOT NULL,
+    length INT NOT NULL,
+    artist_id INT NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (artist_id) REFERENCES artist(id)
+);
+----
+
+_CLI_ клиент содержит меню, в котором находятся доступные для пользователя команды (функциональность).
+
+****
+Функциональность доступная для пользователя реализовывается _tasks_ приведенными ниже.
+****
+
+== Task 1
+
+Реализовать вывод всех `Artist` из *Music Store*.
+
+== Task 2
+
+Реализовать вывод всех `Song` из *Music Store*.
+
+== Task 3
+
+Реализовать вывод `Artist` с помощью `id` из *Music Store*.
+
+== Task 4
+
+Реализовать вывод `Song` с помощью `id` из *Music Store*.
+
+== Task 5
+
+Реализовать создание `Artist` в *Music Store*.
+
+== Task 6
+
+Реализовать создание `Song` в *Music Store*.
+
+== Task 7
+
+Реализовать вывод всех `Song` с помощью `id` для `Artist` из *Music Store*.

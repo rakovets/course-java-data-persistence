@@ -10,10 +10,10 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>by.rakovets.course.datapersistence</groupId>
-    <artifactId>intro-hibernate</artifactId>
+    <groupId>by.rakovets.course.datapersistance</groupId>
+    <artifactId>mapping-association</artifactId>
     <packaging>jar</packaging>
-    <name>Theme: "Intro to Hibernate"</name>
+    <name>Theme: "Mapping of Association"</name>
 
     <dependencies>
         <dependency>
@@ -23,6 +23,10 @@
         <dependency>
             <groupId>org.mariadb.jdbc</groupId>
             <artifactId>mariadb-java-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>

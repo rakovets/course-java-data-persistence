@@ -11,9 +11,8 @@
     </parent>
 
     <groupId>by.rakovets.course.datapersistence</groupId>
-    <artifactId>intro-hibernate</artifactId>
-    <packaging>jar</packaging>
-    <name>Theme: "Intro to Hibernate"</name>
+    <artifactId>query-criteria</artifactId>
+    <name>Theme: "Queries with Criteria API</name>
 
     <dependencies>
         <dependency>
@@ -25,8 +24,8 @@
             <artifactId>mariadb-java-client</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -35,6 +34,14 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
         </dependency>
     </dependencies>
 </project>
