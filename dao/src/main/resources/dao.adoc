@@ -3,11 +3,9 @@
 Реализовать _CLI_ клиента для работ c *Restaurant*.
 Данные для него хранятся в _DBSM_, SQL script для создания необходимой структуры _DB_ приведен ниже:
 
-:source: ../../../../../../../src
-
 [source,sql]
 ----
-include::../sql/restaurant.sql[SQL script]
+include::./sql/restaurant.sql[SQL script]
 ----
 
 _CLI_ клиент содержит меню, в котором находятся доступные для пользователя команды (функциональность).
