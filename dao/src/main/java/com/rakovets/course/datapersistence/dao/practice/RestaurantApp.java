@@ -1,10 +1,10 @@
 package com.rakovets.course.datapersistence.dao.practice;
 
-import com.rakovets.course_java_enterprise.solution.dao.dao.RestaurantDao;
-import com.rakovets.course_java_enterprise.solution.dao.dao.ReviewDao;
-import com.rakovets.course_java_enterprise.solution.dao.entity.Dish;
-import com.rakovets.course_java_enterprise.solution.dao.entity.Restaurant;
-import com.rakovets.course_java_enterprise.solution.dao.entity.Review;
+import com.rakovets.course.datapersistence.dao.practice.dao.RestaurantDao;
+import com.rakovets.course.datapersistence.dao.practice.dao.ReviewDao;
+import com.rakovets.course.datapersistence.dao.practice.entity.Dish;
+import com.rakovets.course.datapersistence.dao.practice.entity.Restaurant;
+import com.rakovets.course.datapersistence.dao.practice.entity.Review;
 
 import java.util.Optional;
 
