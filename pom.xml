@@ -18,6 +18,7 @@
         <module>mapping-inheritance</module>
         <module>query-hql</module>
         <module>query-criteria</module>
+        <module>liquibase</module>
     </modules>
 
     <properties>
