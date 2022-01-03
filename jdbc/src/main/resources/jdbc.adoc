@@ -1,58 +1,56 @@
-= Music Store
+= JDBC
 
-Реализовать _CLI_ клиента для работ c *Music Store*. Данные для него хранятся в _DBSM_, SQL script для создания необходимой структуры _DB_ приведен ниже:
+* В нижеприведенных заданиях стоит обратить внимание на *Data Access Layer* (*слой доступа к данным*).
+* Вопрос "Как организовать *Presentation Layer*?" остается на усмотрении разработчика. Например: если разработчик знаком с Web компонентами *Jakarta EE*, то можно использовать *Jakarta Servlet* и *JSP*.
 
-[source,sql]
-----
-CREATE DATABASE IF NOT EXISTS music_store;
-USE music_store;
+== Project 'Music Store'
 
-CREATE TABLE IF NOT EXISTS artist (
-    id INT AUTO_INCREMENT,
-    name VARCHAR(50) UNIQUE NOT NULL,
-    PRIMARY KEY(id)
-);
+* Данные для него хранятся в *RDBSM*.
+* Структура *Database*:
 
-CREATE TABLE IF NOT EXISTS song (
-    id INT AUTO_INCREMENT,
-    title VARCHAR(50) NOT NULL,
-    length INT NOT NULL,
-    artist_id INT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (artist_id) REFERENCES artist(id)
-);
-----
+image::./db-diargam.png[]
 
-_CLI_ клиент содержит меню, в котором находятся доступные для пользователя команды (функциональность).
+WARNING: В случае неудачи какого-либо действия, бросить свое собственное исключение.
 
-****
-Функциональность доступная для пользователя реализовывается _tasks_ приведенными ниже.
-****
+== Specification of task 1
 
-== Task 1
+Реализовать добавление:
 
-Реализовать вывод всех `Artist` из *Music Store*.
+* исполнителя
+* музыкальной композиции какого-то исполнителя
 
-== Task 2
+== Specification of task 2
 
-Реализовать вывод всех `Song` из *Music Store*.
+Реализовать удаление:
 
-== Task 3
+* музыкальной композиции какого-то исполнителя
+* исполнителя
 
-Реализовать вывод `Artist` с помощью `id` из *Music Store*.
+== Specification of task 3
 
-== Task 4
+Реализовать обновление:
 
-Реализовать вывод `Song` с помощью `id` из *Music Store*.
+* исполнителя
+* музыкальной композиции какого-то исполнителя
 
-== Task 5
+== Specification of task 4
 
-Реализовать создание `Artist` в *Music Store*.
+Реализовать получение:
 
-== Task 6
+* исполнителя
+* музыкальной композиции какого-то исполнителя
 
-Реализовать создание `Song` в *Music Store*.
+== Specification of task 5
 
-== Task 7
+Реализовать получение:
 
-Реализовать вывод всех `Song` с помощью `id` для `Artist` из *Music Store*.
+* музыкальной композиции и ее исполнителя
+* исполнителя и всех его композиций
+
+== *Specification of task 6
+
+Реализовать получение:
+
+* всех исполнителей с пагинацией
+* всех музыкальных композиций с пагинацией
+* получение исполнителя и его музыкальных композиций с пагинацией
