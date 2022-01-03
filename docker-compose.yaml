@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  postgres:
+    container_name: course-data-persistence-postgres-container
+    image: postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DATABASE:-course_java_data_persistence}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+    ports:
+      - '5432:5432'
+    networks:
+      - inner
+
+  mariadb:
+    container_name: course-data-persistence-mariadb-container
+    image: mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD:-1234}
+      MARIADB_DATABASE: ${MARIADB_DATABASE:-course_java_data_persistence}
+      MARIADB_USER: ${MARIADB_USER:-mariadb}
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD:-1234567}
+    ports:
+      - '3306:3306'
+    networks:
+      - inner
+
+networks:
+  inner:
+    name: course-data-persistence-network
+    driver: bridge
