@@ -6,15 +6,18 @@ import java.util.Set;
 public class Artist {
     private long id;
     private String name;
+    private String country;
     private Set<Song> songs = new HashSet<>();
 
-    public Artist(String name) {
+    public Artist(String name, String country) {
         this.name = name;
+        this.country = country;
     }
 
-    public Artist(long id, String name) {
+    public Artist(long id, String name, String country) {
         this.id = id;
         this.name = name;
+        this.country = country;
     }
 
     public long getId() {
@@ -31,6 +34,14 @@ public class Artist {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public void addSong(Song song) {
