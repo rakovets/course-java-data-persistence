@@ -25,7 +25,7 @@ public class ReviewDao {
     public void save(Review review) {
         try (Connection connection = ConnectionManager.getConnection()) {
             try (PreparedStatement preparedStatement = connection.prepareStatement(
-                    "INSERT INTO reviews (text, restaurant_id) VALUES (?, ?);")) {
+                    "INSERT INTO review (content, restaurant_id) VALUES (?, ?);")) {
                 preparedStatement.setString(1, review.getText());
                 preparedStatement.setLong(2, review.getRestaurant().getId());
                 preparedStatement.executeUpdate();

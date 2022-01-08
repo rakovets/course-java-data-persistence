@@ -30,7 +30,7 @@ public class RestaurantDao {
     public Optional<Restaurant> save(Restaurant restaurant) {
         try (Connection connection = ConnectionManager.getConnection()) {
             try (PreparedStatement preparedStatement = connection.prepareStatement(
-                    "INSERT INTO restaurants (name) VALUES (?)", Statement.RETURN_GENERATED_KEYS)) {
+                    "INSERT INTO restaurant (name) VALUES (?)", Statement.RETURN_GENERATED_KEYS)) {
                 preparedStatement.setString(1, restaurant.getName());
                 preparedStatement.executeUpdate();
                 ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
@@ -48,7 +48,7 @@ public class RestaurantDao {
     public Optional<Restaurant> getById(long id) {
         try (Connection connection = ConnectionManager.getConnection()) {
             try (PreparedStatement preparedStatement = connection.prepareStatement(
-                    "SELECT * FROM restaurants WHERE id = ?")) {
+                    "SELECT * FROM restaurant WHERE restaurant_id = ?")) {
                 preparedStatement.setLong(1, id);
                 ResultSet resultSet = preparedStatement.executeQuery();
                 if (resultSet.next()) {
@@ -65,7 +65,7 @@ public class RestaurantDao {
         try (Connection connection = ConnectionManager.getConnection()) {
             connection.setAutoCommit(false);
             try (PreparedStatement preparedStatement = connection.prepareStatement(
-                    "INSERT INTO dishes (name) VALUES (?)", Statement.RETURN_GENERATED_KEYS)) {
+                    "INSERT INTO dish (name) VALUES (?)", Statement.RETURN_GENERATED_KEYS)) {
                 preparedStatement.setString(1, dish.getName());
                 preparedStatement.executeUpdate();
                 ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
@@ -74,7 +74,7 @@ public class RestaurantDao {
                 }
             }
             try (PreparedStatement preparedStatement = connection.prepareStatement(
-                    "INSERT INTO restaurants_dishes (restaurant_id, dish_id) VALUES (?, ?)")) {
+                    "INSERT INTO restaurant_dish_link (restaurant_id, dish_id) VALUES (?, ?)")) {
                 preparedStatement.setLong(1, restaurant.getId());
                 preparedStatement.setLong(2, dish.getId());
                 preparedStatement.executeUpdate();
@@ -91,12 +91,12 @@ public class RestaurantDao {
     public Optional<Restaurant> getFullInfo(long id) {
         try (Connection connection = ConnectionManager.getConnection()) {
             try (PreparedStatement preparedStatement = connection.prepareStatement(
-                    "SELECT res.id, res.name AS res_name, d.id AS dish_id, d.name AS dish_name, "
-                            + "rev.id AS rev_id, rev.text FROM restaurants AS res "
-                            + "LEFT JOIN restaurants_dishes AS rd ON res.id = rd.restaurant_id "
-                            + "LEFT JOIN dishes AS d ON d.id = rd.dish_id "
-                            + "LEFT JOIN reviews AS rev ON res.id = rev.restaurant_id "
-                            + " WHERE res.id = ?")) {
+                    "SELECT res.restaurant_id, res.name AS res_name, d.dish_id, d.name AS dish_name, "
+                            + "rev.review_id , rev.content FROM restaurant AS res "
+                            + "LEFT JOIN restaurant_dish_link AS rd ON res.restaurant_id = rd.restaurant_id "
+                            + "LEFT JOIN dish AS d ON d.dish_id = rd.dish_id "
+                            + "LEFT JOIN review AS rev ON res.restaurant_id = rev.restaurant_id "
+                            + " WHERE res.restaurant_id = ?")) {
                 preparedStatement.setLong(1, id);
                 ResultSet resultSet = preparedStatement.executeQuery();
                 Restaurant restaurant = new Restaurant(id);
@@ -104,7 +104,7 @@ public class RestaurantDao {
                     restaurant.setName(resultSet.getString("res_name"));
                     Dish dish = new Dish(resultSet.getLong("dish_id"), resultSet.getString("dish_name"));
                     restaurant.addDish(dish);
-                    Review review = new Review(resultSet.getLong("rev_id"), resultSet.getString("text"), restaurant);
+                    Review review = new Review(resultSet.getLong("review_id"), resultSet.getString("content"), restaurant);
                     restaurant.addReview(review);
                 }
                 return Optional.of(restaurant);

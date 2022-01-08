@@ -34,7 +34,7 @@ public class ArtistDaoJdbc implements ArtistDao {
                 preparedStatement.executeUpdate();
                 ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
                 if (generatedKeys.next()) {
-                    artist.setId(generatedKeys.getLong(1));
+                    artist.setId(generatedKeys.getLong("artist_id"));
                     return artist;
                 }
             }
