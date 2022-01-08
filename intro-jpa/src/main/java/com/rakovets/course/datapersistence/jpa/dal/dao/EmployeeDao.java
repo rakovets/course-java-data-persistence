@@ -2,8 +2,7 @@ package com.rakovets.course.datapersistence.jpa.dal.dao;
 
 import com.rakovets.course.datapersistence.jpa.dal.entity.EmployeeEntity;
 import com.rakovets.course.datapersistence.jpa.util.DynamicEntityManagerFactoryUtil;
-
-import javax.persistence.EntityManager;
+import jakarta.persistence.EntityManager;
 
 public class EmployeeDao extends Dao<EmployeeEntity> {
     public void save(EmployeeEntity employeeEntity) {
