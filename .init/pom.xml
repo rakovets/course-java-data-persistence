@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>by.rakovets.course</groupId>
-    <artifactId>course-java-data-persistence-init</artifactId>
-    <version>1.0.0</version>
-    <packaging>pom</packaging>
+    <parent>
+        <groupId>by.rakovets.course</groupId>
+        <artifactId>course-java-data-persistence</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>by.rakovets.course.datapersistence</groupId>
+    <artifactId>.init</artifactId>
+    <name>Initialization DB</name>
 
     <properties>
-        <maven.compiler.target>11</maven.compiler.target>
-        <maven.compiler.source>11</maven.compiler.source>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <log4j2.version>2.17.1</log4j2.version>
@@ -59,7 +63,7 @@
                 <artifactId>liquibase-maven-plugin</artifactId>
                 <version>${liquibase.version}</version>
                 <configuration>
-<!--                    <propertyFile>src/main/resources/liquibase.properties</propertyFile>-->
+                    <!--                    <propertyFile>src/main/resources/liquibase.properties</propertyFile>-->
                     <changeLogFile>src/main/resources/db.changelog-root.xml</changeLogFile>
                     <dropFirst>true</dropFirst>
                     <logging>debug</logging>

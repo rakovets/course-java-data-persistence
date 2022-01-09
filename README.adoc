@@ -2,16 +2,44 @@
 
 Course "Data Persistence in Java"
 
-== Program
+== TO DO
 
-1. Java DataBase Connectivity (JDBC)
-2. Data Access Object pattern (DAO pattern)
-3. Database Connection Pool (DBCP)
-4. Java Persistence API (JPA)
-    . with EclipseLink JPA
-    . with Hibernate ORM
-5. Hibernate
-    . Intro to Hibernate
+* Переписать все тесты для *DAL* с помощью *Testcontainers*.
+* Описать структуру проекта.
+* Реализовать сквозные задания для общего проекта *User Management System*
+
+== Tools
+
+* *Java* `11`
+* *Apache Maven* `latest`
+* *Jakarta EE* `9`
+* *JPA* `3`
+* *Hibernate* `6.0.0.Beta3`
+* *PostgreSQL* `latest`
+* *MariaDB* `latest`
+
+== Project structure
+
+//todo
+
+== Themes
+
+[options="header",cols="2,3,1"]
+|===
+|Module|Theme|Documentation/Task
+|`.init`|Initialization DB|link:./.init/README.adoc[README.adoc]
+|`01-jdbc`|*Java DataBase Connectivity* (*JDBC*)|link:./01-jdbc/src/main/resources/jdbc.adoc[jdbc.adoc]
+|`02-dao`|*Data Access Object* pattern (*DAO* pattern)|link:./02-dao/src/main/resources/dao.adoc[dao.adoc]
+|`03-dbcp`|*Database Connection Pool* (*DBCP*)|In progress
+|`04-intro-jpa`|Intro to *Java Persistence API* (*JPA*).|link:./04-intro-jpa/src/main/resources/intro-jpa.adoc[intro-jpa.adoc]
+|`05-intro-hibernate`|Intro to *Hibernate*|link:./05-intro-hibernate/src/main/resources/intro-hibernate.adoc[intro-hibernate.adoc]
+|`06-mapping-basic`|Basic Mapping|In progress
+|`07-mapping-inheritance`|Mapping of Inheritance|In progress
+|`08-mapping-relationship`|Mapping of Relationship|In progress
+|`09-query-jpql`|Queries with *Java Persistence Queries Language* (*JPQL*)|In progress
+|`10-query-criteria`|Queries with *Criteria API*|In progress
+|`11-db-migration`|DM migration with Liquibase|In progress
+|===
 
 == Code of Conduct
 
