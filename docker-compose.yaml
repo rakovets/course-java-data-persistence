@@ -3,19 +3,21 @@ version: '3.7'
 services:
   postgres:
     container_name: course-data-persistence-postgres-container
-    image: postgres
+    image: postgres:latest
     environment:
       POSTGRES_DB: ${POSTGRES_DATABASE:-course_java_data_persistence}
       POSTGRES_USER: ${POSTGRES_USER:-postgres}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-12345678}
     ports:
       - '5432:5432'
+    volumes:
+    - './.db/postgresql/data:/var/lib/postgresql/data'
     networks:
       - inner
 
   mariadb:
     container_name: course-data-persistence-mariadb-container
-    image: mariadb
+    image: mariadb:latest
     environment:
       MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD:-1234}
       MARIADB_DATABASE: ${MARIADB_DATABASE:-course_java_data_persistence}
@@ -23,6 +25,9 @@ services:
       MARIADB_PASSWORD: ${MARIADB_PASSWORD:-1234567}
     ports:
       - '3306:3306'
+    volumes:
+      - './.db/mariadb/data:/var/lib/mysql'
+      - './.db/mariadb/custom.cnf:/etc/mysql/conf.d/custom.cnf'
     networks:
       - inner
 
