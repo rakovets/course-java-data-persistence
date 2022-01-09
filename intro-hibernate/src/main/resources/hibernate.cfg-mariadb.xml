@@ -4,12 +4,12 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.driver_class">org.postgresql.Driver</property>
-        <property name="connection.url">jdbc:postgresql://localhost:5432/course_java_data_persistence?currentSchema=intro_hibernate</property>
-        <property name="connection.username">postgres</property>
-        <property name="connection.password">12345678</property>
-        <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
-        <property name="hbm2ddl.auto">create-drop</property>
+        <property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mariadb://localhost:3306/intro_hibernate</property>
+        <property name="connection.username">mariadb</property>
+        <property name="connection.password">1234567</property>
+        <property name="dialect">org.hibernate.dialect.MariaDBDialect</property>
+        <property name="hbm2ddl.auto">create</property>
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
 
