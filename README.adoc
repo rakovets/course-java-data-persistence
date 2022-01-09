@@ -4,7 +4,6 @@ Course "Data Persistence in Java"
 
 == TO DO
 
-* Переписать все тесты для *DAL* с помощью *Testcontainers*.
 * Описать структуру проекта.
 * Реализовать сквозные задания для общего проекта *User Management System*
 
