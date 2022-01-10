@@ -5,12 +5,16 @@
         https://jakarta.ee/xml/ns/persistence/orm_3_0.xsd" version="3.0">
 
     <description>XML Mapping file</description>
-    <entity class="com.rakovets.course.datapersistence.jpa.dal.entity.EmployeeEntity">
-        <table name="employee"/>
+    <mapped-superclass class="com.rakovets.course.datapersistence.example.jpa.example2.dal.entity.BaseEntity" access="PROPERTY">
         <attributes>
             <id name="id">
-                <generated-value strategy="AUTO"/>
+                <generated-value strategy="IDENTITY"/>
             </id>
+        </attributes>
+    </mapped-superclass>
+    <entity class="com.rakovets.course.datapersistence.example.jpa.example2.dal.entity.EmployeeEntity">
+        <table name="employee"/>
+        <attributes>
             <basic name="name">
                 <column name="name" length="100"/>
             </basic>

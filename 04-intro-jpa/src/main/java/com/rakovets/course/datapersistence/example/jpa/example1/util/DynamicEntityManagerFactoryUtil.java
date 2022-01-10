@@ -1,4 +1,4 @@
-package com.rakovets.course.datapersistence.jpa.util;
+package com.rakovets.course.datapersistence.example.jpa.example1.util;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;

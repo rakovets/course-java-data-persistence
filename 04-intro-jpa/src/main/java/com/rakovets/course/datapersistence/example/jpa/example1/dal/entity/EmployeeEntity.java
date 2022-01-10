@@ -1,4 +1,4 @@
-package com.rakovets.course.datapersistence.jpa.dal.entity;
+package com.rakovets.course.datapersistence.example.jpa.example1.dal.entity;
 
 import java.util.Objects;
 
