@@ -1,5 +1,7 @@
 package com.rakovets.course.datapersistence.example.jpa.example2;
 
+import com.rakovets.course.datapersistence.example.jpa.example1.dal.dao.EmployeeDao;
+import com.rakovets.course.datapersistence.example.jpa.example2.dal.dao.BaseDao;
 import com.rakovets.course.datapersistence.example.jpa.example2.dal.dao.EmployeeDaoImpl;
 import com.rakovets.course.datapersistence.example.jpa.example2.dal.entity.EmployeeEntity;
 import com.rakovets.course.datapersistence.example.jpa.example2.util.DynamicEntityManagerFactoryUtil;
