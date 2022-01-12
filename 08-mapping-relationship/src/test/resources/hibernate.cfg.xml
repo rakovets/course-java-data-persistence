@@ -11,14 +11,14 @@
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
 
-        <mapping class="com.rakovets.course.datapersistence.mapping.association.hero.entity.Hero"/>
-        <mapping class="com.rakovets.course.datapersistence.mapping.association.hero.entity.Inventory"/>
-        <mapping class="com.rakovets.course.datapersistence.mapping.association.hero.entity.Quest"/>
-        <mapping class="com.rakovets.course.datapersistence.mapping.association.hero.entity.Item"/>
+        <mapping class="by.rakovets.course.datapersistence.mapping.association.hero.entity.Hero"/>
+        <mapping class="by.rakovets.course.datapersistence.mapping.association.hero.entity.Inventory"/>
+        <mapping class="by.rakovets.course.datapersistence.mapping.association.hero.entity.Quest"/>
+        <mapping class="by.rakovets.course.datapersistence.mapping.association.hero.entity.Item"/>
 
-        <mapping class="com.rakovets.course.datapersistence.mapping.association.demo.entity.Address"/>
-        <mapping class="com.rakovets.course.datapersistence.mapping.association.demo.entity.Employee"/>
-        <mapping class="com.rakovets.course.datapersistence.mapping.association.demo.entity.Meeting"/>
-        <mapping class="com.rakovets.course.datapersistence.mapping.association.demo.entity.Organization"/>
+        <mapping class="by.rakovets.course.datapersistence.mapping.association.demo.entity.Address"/>
+        <mapping class="by.rakovets.course.datapersistence.mapping.association.demo.entity.Employee"/>
+        <mapping class="by.rakovets.course.datapersistence.mapping.association.demo.entity.Meeting"/>
+        <mapping class="by.rakovets.course.datapersistence.mapping.association.demo.entity.Organization"/>
     </session-factory>
 </hibernate-configuration>

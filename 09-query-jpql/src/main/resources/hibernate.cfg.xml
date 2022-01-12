@@ -13,9 +13,9 @@
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
 
-        <mapping class="com.rakovets.course.datapersistence.query.hql.dal.entity.IdentifiableEntity"/>
-        <mapping class="com.rakovets.course.datapersistence.query.hql.dal.entity.Employee"/>
-        <mapping class="com.rakovets.course.datapersistence.query.hql.dal.entity.Organization"/>
-        <mapping class="com.rakovets.course.datapersistence.query.hql.dal.entity.Payment"/>
+        <mapping class="by.rakovets.course.datapersistence.query.hql.dal.entity.IdentifiableEntity"/>
+        <mapping class="by.rakovets.course.datapersistence.query.hql.dal.entity.Employee"/>
+        <mapping class="by.rakovets.course.datapersistence.query.hql.dal.entity.Organization"/>
+        <mapping class="by.rakovets.course.datapersistence.query.hql.dal.entity.Payment"/>
     </session-factory>
 </hibernate-configuration>

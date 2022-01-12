@@ -11,6 +11,6 @@
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
 
-        <mapping class="com.rakovets.course.datapersistence.hibernate.dal.entity.Employee"/>
+        <mapping class="by.rakovets.course.datapersistence.hibernate.dal.entity.Employee"/>
     </session-factory>
 </hibernate-configuration>

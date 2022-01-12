@@ -1,9 +1,7 @@
 package by.rakovets.course.datapersistence.example.jpa.example2.dal.dao;
 
-import com.rakovets.course.datapersistence.example.jpa.example1.util.DynamicEntityManagerFactoryUtil;
-import com.rakovets.course.datapersistence.example.jpa.example2.dal.dao.BaseDao;
-import com.rakovets.course.datapersistence.example.jpa.example2.dal.dao.EmployeeDaoImpl;
-import com.rakovets.course.datapersistence.example.jpa.example2.dal.entity.EmployeeEntity;
+import by.rakovets.course.datapersistence.example.jpa.example1.util.DynamicEntityManagerFactoryUtil;
+import by.rakovets.course.datapersistence.example.jpa.example2.dal.entity.EmployeeEntity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import org.junit.jupiter.api.Assertions;
