@@ -1,60 +1,47 @@
 = Intro to Hibernate
 
-Каталог для картин.
+Реализовать приложение "Каталог для картин".
 
-== Task 1
+== Specification of task 1
 
-Создать _database_ `catalog-painting`.
+Настроить проект для работы с *Hibernate*. Для этого необходимо:
 
-== Task 2
+* Создать maven-проект.
+* Подключить зависимости *Driver*, *JPA*, *Hibernate* (одной из реализаций *JPA*).
+* Настроить работу *Hibernate* с помощью `hibernate.cfg.xml`.
 
-Создать _entity_ `Painting` с _fields_:
+== Specification of task 2
 
+Создать и произвести маппинг Class to Table. Для этого необходимо:
+
+* Создать класс Entity `Painting` с _fields_:
 * `id`
 * `name`
 * `authorName`
+* произвести _mapping_ _class_ на _table_ с помощью аннотаций.
 
-== Task 3
+== Specification of task 3
 
-* Подключить dependency *Hibernate* - одной из реализаций JPA.
-* Настроить *Hibernate* с помощью `hibernate.cfg.xml`.
+Реализовать DAO класс, который может следующие операции над *Entity* при помощи `Session`:
 
-== Task 4
+* сохранить
+* найти
+** с помощью id
+** все
+* обновить
+* удалить
 
-Произвести _mapping_ _class_ на _table_ с помощью аннотаций.
+Каждый методы выполняются в собственной `Transaction`.
 
-== Task 5
+== Specification of task 4
 
-Создать abstract class `Dao<T>`, который имеет *CRUD*-методы.
+* Подключить dependency *Log4J2* - библиотека для _logging_.
+* Настроить *Log4J2* с помощью `log4о2.чьд` для вывода в Standard Output.
 
-== Task 6
+== Specification of task 5
 
-Создать class `PaintingDao`, который реализует *CRUD*-методы используя `Session`. Все методы выполняются в одной `Transaction`.
+Протестировать работу методов в DAO классе. Для этого необходимо:
 
-== Task 7
-
-Создать набор _unit_-тестов для тестирования class `PaintingDao`.
-
-== Task 8
-
-* Подключить dependency *Log4J* - библиотеки _logging_.
-* Настроить *Log4J* с помощью `log.properties` для вывода в консоль и файл.
-
-== Task 9
-
-Добавить _logging_ с различными _levels_:
-
-* `ERROR`
-* `WARN`
-* `INFO`
-* `DEBUG`
-* `ALL`
-
-для следующих событий:
-
-* начало `Transaction`
-* открытие `Session`
-* выполнение операции с помощью `Session`
-* закрытие `Session`
-* применение `Transaction` в случае успеха
-* откат `Transaction` в случае неудачи
+* Подключить тестовые зависимости *JUnit 5* и *Testcontainers* к проекту.
+* Создать _configuration_ проекта для тестов, используя в качестве СУБД *PostgreSQL* в *Testcontainers*.
+* Реализовать unit-тесты для всех методов.
