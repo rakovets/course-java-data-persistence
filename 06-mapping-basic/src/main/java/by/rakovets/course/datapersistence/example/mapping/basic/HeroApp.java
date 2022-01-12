@@ -1,8 +1,8 @@
-package by.rakovets.course.datapersistence.mapping.basic;
+package by.rakovets.course.datapersistence.example.mapping.basic;
 
-import by.rakovets.course.datapersistence.mapping.basic.dal.entity.EquipmentSet;
-import by.rakovets.course.datapersistence.mapping.basic.dal.entity.Gender;
-import by.rakovets.course.datapersistence.mapping.basic.dal.entity.HeroEntity;
+import by.rakovets.course.datapersistence.example.mapping.basic.dal.entity.EquipmentSet;
+import by.rakovets.course.datapersistence.example.mapping.basic.dal.entity.Gender;
+import by.rakovets.course.datapersistence.example.mapping.basic.dal.entity.HeroEntity;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

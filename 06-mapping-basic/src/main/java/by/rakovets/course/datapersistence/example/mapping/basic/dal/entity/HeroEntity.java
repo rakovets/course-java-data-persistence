@@ -1,4 +1,4 @@
-package by.rakovets.course.datapersistence.mapping.basic.dal.entity;
+package by.rakovets.course.datapersistence.example.mapping.basic.dal.entity;
 
 import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.AttributeOverrides;
