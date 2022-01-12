@@ -8,9 +8,8 @@
         <property name="connection.url">jdbc:tc:postgresql:14.1:///course_java_data_persistence</property>
         <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
         <property name="hbm2ddl.auto">create-drop</property>
-        <property name="show_sql">true</property>
         <property name="format_sql">true</property>
 
-        <mapping class="by.rakovets.course.datapersistence.hibernate.dal.entity.Employee"/>
+        <mapping class="by.rakovets.course.datapersistence.example.hibernate.dal.entity.EmployeeEntity"/>
     </session-factory>
 </hibernate-configuration>
