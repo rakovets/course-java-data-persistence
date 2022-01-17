@@ -36,7 +36,7 @@
 == Specification of task 4
 
 * Подключить dependency *Log4J2* - библиотека для _logging_.
-* Настроить *Log4J2* с помощью `log4о2.чьд` для вывода в Standard Output.
+* Настроить *Log4J2* с помощью `log4j2.xml` для вывода в Standard Output.
 
 == Specification of task 5
 

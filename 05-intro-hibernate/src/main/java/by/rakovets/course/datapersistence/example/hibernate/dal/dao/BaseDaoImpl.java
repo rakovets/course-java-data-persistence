@@ -10,7 +10,7 @@ import java.util.List;
 public class BaseDaoImpl<T extends BaseEntity> implements BaseDao<T> {
     private final Class<T> clazz;
 
-    public BaseDaoImpl(Class<T> clazz) {
+    protected BaseDaoImpl(Class<T> clazz) {
         this.clazz = clazz;
     }
 
@@ -20,7 +20,6 @@ public class BaseDaoImpl<T extends BaseEntity> implements BaseDao<T> {
         session.getTransaction().begin();
 
         session.save(entity);
-        session.flush();
 
         session.getTransaction().commit();
         session.close();
@@ -64,8 +63,6 @@ public class BaseDaoImpl<T extends BaseEntity> implements BaseDao<T> {
         Session session = SessionUtil.openSession();
         session.getTransaction().begin();
 
-//        T merged = session.merge(entity);
-//        session.remove(merged);
         session.delete(entity);
 
         session.getTransaction().commit();
