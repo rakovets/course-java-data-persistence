@@ -1,13 +1,6 @@
 = Basic Mapping
 
-- Time
-- Date
-- DateTime
-- Period/Duration
-- Enum
-- Embedded
-
-Реализовать приложение "Каталог для картин".
+Реализовать приложение "Каталог сотрудников".
 
 == Specification of task 1
 
@@ -31,13 +24,7 @@
 * `dailyMeetingBeginning`
 * `dailyMeetingDuration`
 * `homeAddress`
-** `city`
-** `street`
-** `apartment`
 * `workAddress`
-** `city`
-** `street`
-** `apartment`
 
 == Specification of task 3
 
