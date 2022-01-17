@@ -1,0 +1,101 @@
+= Basic Mapping
+
+- Time
+- Date
+- DateTime
+- Period/Duration
+- Enum
+- Embedded
+
+Реализовать приложение "Каталог для картин".
+
+== Specification of task 1
+
+Настроить проект для работы с *Hibernate*. Для этого необходимо:
+
+* Создать maven-проект.
+* Подключить зависимости *Driver*, *JPA*, *Hibernate* (одной из реализаций *JPA*).
+* Настроить работу *Hibernate* с помощью `hibernate.cfg.xml`.
+
+== Specification of task 2
+
+Создать и произвести маппинг Class to Table. Для этого необходимо:
+
+* Создать класс Entity `Employee` с _fields_:
+* `id`
+* `firstName`
+* `lastName`
+* `position`
+* `birthday`
+* `timeTrackerCheck`
+* `dailyMeetingBeginning`
+* `dailyMeetingDuration`
+* `homeAddress`
+** `city`
+** `street`
+** `apartment`
+* `workAddress`
+** `city`
+** `street`
+** `apartment`
+
+== Specification of task 3
+
+Произвести _mapping_ с помощью аннотаций следующих _fields_:
+
+* `id` - представляет собой UUID
+* `firstName`
+* `lastName`
+* `position` - представляет собой instance Enum
+
+== Specification of task 4
+
+Произвести _mapping_ с помощью аннотаций следующих _fields_:
+
+* `birthday` - представляет собой `LocalDate` в формате `31.01.2000`
+* `timeTrackerCheck` - представляет собой `ZoneDateTime` по *UTC*
+* `dailyMeetingBeginning` - представляет собой `LocalTime` в формате `10:00:00`
+* `dailyMeetingDuration` - продолжительно в стандарте *ISO 8601*, например `P20M`
+
+== Specification of task 5
+
+Произвести _mapping_ с помощью аннотаций следующих _fields_:
+
+* `homeAddress` - представляет собой объект, который содержит другие _fields_
+** `country` - страна
+** `region` - регион, округ, область, район и т.п.
+** `city` - город, поселение, деревня и т.д.
+** `street` - улица, дом, корпус и т.п.
+** `apartment` - квартира, номер и т.п.
+* `workAddress` - представляет собой объект, который содержит другие _fields_
+** `country` - страна
+** `region` - регион, округ, область, район и т.п.
+** `city` - город, поселение, деревня и т.д.
+** `street` - улица, дом, корпус и т.п.
+** `apartment` - квартира, номер и т.п.
+
+== Specification of task 6
+
+Реализовать DAO класс, который может следующие операции над *Entity* при помощи `Session`:
+
+* сохранить
+* найти
+** с помощью id
+** все
+* обновить
+* удалить
+
+Каждый методы выполняются в собственной `Transaction`.
+
+== Specification of task 7
+
+* Подключить dependency *Log4J2* - библиотека для _logging_.
+* Настроить *Log4J2* с помощью `log4j2.xml` для вывода в Standard Output.
+
+== Specification of task 8
+
+Протестировать работу методов в DAO классе. Для этого необходимо:
+
+* Подключить тестовые зависимости *JUnit 5* и *Testcontainers* к проекту.
+* Создать _configuration_ проекта для тестов, используя в качестве СУБД *PostgreSQL* в *Testcontainers*.
+* Реализовать unit-тесты для всех методов.
