@@ -8,30 +8,46 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import java.time.LocalDateTime;
-import java.util.Objects;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
+import java.util.UUID;
 
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name = "hero")
 public class HeroEntity {
     @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "hero_id")
+    @GeneratedValue(generator = "UUID")
+    private UUID id;
 
     @Column(name = "name")
     private String name;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "birthday")
+    private LocalDate birthday;
+
+    @Column(name = "attack_duration")
+    private String attackDuration;
 
     @Column(name = "gender")
     @Enumerated(EnumType.STRING)
     private Gender gender;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "creation_time")
-    private LocalDateTime creationTime;
+    private ZonedDateTime creationTime;
 
     @Embedded
     @AttributeOverrides({
@@ -46,81 +62,4 @@ public class HeroEntity {
             @AttributeOverride(name = "rangedWeapon", column = @Column(name = "second_ranged_weapon"))
     })
     private EquipmentSet secondEquipmentSet;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Gender getGender() {
-        return gender;
-    }
-
-    public void setGender(Gender gender) {
-        this.gender = gender;
-    }
-
-    public LocalDateTime getCreationTime() {
-        return creationTime;
-    }
-
-    public void setCreationTime(LocalDateTime creationTime) {
-        this.creationTime = creationTime;
-    }
-
-    public EquipmentSet getFirstEquipmentSet() {
-        return firstEquipmentSet;
-    }
-
-    public void setFirstEquipmentSet(EquipmentSet firstEquipmentSet) {
-        this.firstEquipmentSet = firstEquipmentSet;
-    }
-
-    public EquipmentSet getSecondEquipmentSet() {
-        return secondEquipmentSet;
-    }
-
-    public void setSecondEquipmentSet(EquipmentSet secondEquipmentSet) {
-        this.secondEquipmentSet = secondEquipmentSet;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        HeroEntity heroEntity = (HeroEntity) o;
-        return Objects.equals(name, heroEntity.name) &&
-                gender == heroEntity.gender &&
-                Objects.equals(creationTime, heroEntity.creationTime) &&
-                Objects.equals(firstEquipmentSet, heroEntity.firstEquipmentSet) &&
-                Objects.equals(secondEquipmentSet, heroEntity.secondEquipmentSet);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, gender, creationTime, firstEquipmentSet, secondEquipmentSet);
-    }
-
-    @Override
-    public String toString() {
-        return "Hero{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", gender=" + gender +
-                ", creationTime=" + creationTime +
-                ", firstEquipmentSet=" + firstEquipmentSet +
-                ", secondEquipmentSet=" + secondEquipmentSet +
-                '}';
-    }
 }
