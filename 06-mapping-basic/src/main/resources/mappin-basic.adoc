@@ -52,9 +52,9 @@
 
 Произвести _mapping_ с помощью аннотаций следующих _fields_:
 
-* `birthday` - представляет собой `LocalDate` в формате `31.01.2000`
+* `birthday` - представляет собой `LocalDate`
 * `timeTrackerCheck` - представляет собой `ZoneDateTime` по *UTC*
-* `dailyMeetingBeginning` - представляет собой `LocalTime` в формате `10:00:00`
+* `dailyMeetingBeginning` - представляет собой `LocalTime`
 * `dailyMeetingDuration` - продолжительно в стандарте *ISO 8601*, например `P20M`
 
 == Specification of task 5
