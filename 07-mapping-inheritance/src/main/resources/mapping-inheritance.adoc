@@ -1,0 +1,48 @@
+= Mapping inheritance
+
+Реализовать приложение "Каталог сотрудников".
+
+== Specification of task 0
+
+* Подключить dependency *Log4J2* - библиотека для _logging_.
+* Настроить *Log4J2* с помощью `log4j2.xml` для вывода в Standard Output.
+
+== Specification of task 1
+
+Настроить проект для работы с *Hibernate*. Для этого необходимо:
+
+* Создать maven-проект.
+* Подключить зависимости *Driver*, *JPA*, *Hibernate* (одной из реализаций *JPA*).
+* Настроить работу *Hibernate* с помощью `hibernate.cfg.xml`.
+
+== Specification of task 2
+
+* Создать класс Entity `Employee` с _fields_:
+** `employeeId` - типа `UUID`
+** `firstname`
+** `lastname`
+* Создать класс Entity `ContractEmployee` наследующееся от `Employee` с дополнительными _fields_:
+** `contractNumber`
+** `contractBeginDate`
+** `contractEndDate`
+* Создать класс Entity `PersistentEmployee` наследующееся от `Employee` с дополнительными _fields_:
+** `startDate`
+** `liveDate`
+
+== Specification of task 3
+
+* Скопировать "сырые" сущности в пакет `tpc`
+* Произвести _mapping_ скопированных сущностей со стратегией `InheritanceType.TABLE_PER_CLASS`
+* Добавить по 5 значений для сущностей `PersistentEmployee` и `ContractEmployee`
+
+== Specification of task 4
+
+* Скопировать "сырые" сущности в пакет `tph`
+* Произвести _mapping_ скопированных сущностей со стратегией `InheritanceType.SINGLE_TABLE`
+* Добавить по 5 значений для сущностей `PersistentEmployee` и `ContractEmployee`
+
+== Specification of task 5
+
+* Скопировать "сырые" сущности в пакет `tps`
+* Произвести _mapping_ скопированных сущностей со стратегией `InheritanceType.JOINED`
+* Добавить по 5 значений для сущностей `PersistentEmployee` и `ContractEmployee`
