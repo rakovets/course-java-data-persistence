@@ -42,7 +42,7 @@
 * `birthday` - представляет собой `LocalDate`
 * `timeTrackerCheck` - представляет собой `ZoneDateTime` по *UTC*
 * `dailyMeetingBeginning` - представляет собой `LocalTime`
-* `dailyMeetingDuration` - продолжительно в стандарте *ISO 8601*, например `P20M`
+* `dailyMeetingDuration` - продолжительно в стандарте *ISO 8601*, например `PT20M`
 
 == Specification of task 5
 
