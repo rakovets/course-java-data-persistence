@@ -16,7 +16,6 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "addresses")
-@NoArgsConstructor
 @ToString
 public class Address {
     @Id

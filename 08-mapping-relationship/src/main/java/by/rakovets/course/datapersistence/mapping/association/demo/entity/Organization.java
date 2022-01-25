@@ -18,7 +18,6 @@ import java.util.Set;
 
 @Entity
 @Table(name = "organizations")
-@NoArgsConstructor
 @ToString(exclude = "employees")
 public class Organization {
     @Id
