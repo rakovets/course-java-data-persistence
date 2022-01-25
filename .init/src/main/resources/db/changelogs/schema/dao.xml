@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
       https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
     <changeSet id="dao-schema-1" author="rakovets">
-        <createTable schemaName="dao" tableName="artist">
+        <createTable schemaName="02_dao" tableName="artist">
             <column name="artist_id" type="INTEGER" autoIncrement="true">
                 <constraints primaryKey="true"
                              primaryKeyName="pk_artist"
@@ -21,11 +21,11 @@
             </column>
         </createTable>
         <rollback>
-            <dropTable schemaName="dao" tableName="artist" cascadeConstraints="true"/>
+            <dropTable schemaName="02_dao" tableName="artist" cascadeConstraints="true"/>
         </rollback>
     </changeSet>
     <changeSet id="dao-schema-2" author="rakovets">
-        <createTable schemaName="dao" tableName="song">
+        <createTable schemaName="02_dao" tableName="song">
             <column name="song_id" type="INTEGER" autoIncrement="true">
                 <constraints primaryKey="true"
                              primaryKeyName="pk_song"
@@ -47,34 +47,34 @@
             </column>
         </createTable>
         <rollback>
-            <dropTable schemaName="dao" tableName="song" cascadeConstraints="true"/>
+            <dropTable schemaName="02_dao" tableName="song" cascadeConstraints="true"/>
         </rollback>
     </changeSet>
     <changeSet id="dao-schema-3" author="rakovets">
-        <createTable schemaName="dao" tableName="artist_song_link">
+        <createTable schemaName="02_dao" tableName="artist_song_link">
             <column name="artist_id" type="INTEGER">
                 <constraints foreignKeyName="fk_artist"
-                             referencedTableSchemaName="dao"
+                             referencedTableSchemaName="02_dao"
                              referencedTableName="artist"
                              referencedColumnNames="artist_id"
                              nullable="false"/>
             </column>
             <column name="song_id" type="INTEGER">
                 <constraints foreignKeyName="fk_song"
-                             referencedTableSchemaName="dao"
+                             referencedTableSchemaName="02_dao"
                              referencedTableName="song"
                              referencedColumnNames="song_id"
                              nullable="false"/>
             </column>
         </createTable>
-        <addPrimaryKey schemaName="dao" tableName="artist_song_link" columnNames="artist_id,song_id"/>
+        <addPrimaryKey schemaName="02_dao" tableName="artist_song_link" columnNames="artist_id,song_id"/>
 
         <rollback>
-            <dropTable schemaName="dao" tableName="artist_song_link" cascadeConstraints="true"/>
+            <dropTable schemaName="02_dao" tableName="artist_song_link" cascadeConstraints="true"/>
         </rollback>
     </changeSet>
     <changeSet id="dao-schema-restaurant" author="rakovets">
-        <createTable schemaName="dao" tableName="restaurant">
+        <createTable schemaName="02_dao" tableName="restaurant">
             <column name="restaurant_id" type="INTEGER" autoIncrement="true">
                 <constraints primaryKey="true"
                              primaryKeyName="pk_restaurant"
@@ -85,7 +85,7 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
-        <createTable schemaName="dao" tableName="review">
+        <createTable schemaName="02_dao" tableName="review">
             <column name="review_id" type="INTEGER" autoIncrement="true">
                 <constraints primaryKey="true"
                              primaryKeyName="pk_review"
@@ -97,13 +97,13 @@
             </column>
             <column name="restaurant_id" type="INTEGER">
                 <constraints foreignKeyName="fk_review_restaurant_id"
-                             referencedTableSchemaName="dao"
+                             referencedTableSchemaName="02_dao"
                              referencedTableName="restaurant"
                              referencedColumnNames="restaurant_id"
                              nullable="false"/>
             </column>
         </createTable>
-        <createTable schemaName="dao" tableName="dish">
+        <createTable schemaName="02_dao" tableName="dish">
             <column name="dish_id" type="INTEGER" autoIncrement="true">
                 <constraints primaryKey="true"
                              primaryKeyName="pk_dish"
@@ -114,29 +114,29 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
-        <createTable schemaName="dao" tableName="restaurant_dish_link">
+        <createTable schemaName="02_dao" tableName="restaurant_dish_link">
             <column name="restaurant_id" type="INTEGER">
                 <constraints foreignKeyName="fk_restaurant_dish_link_restaurant_id"
-                             referencedTableSchemaName="dao"
+                             referencedTableSchemaName="02_dao"
                              referencedTableName="restaurant"
                              referencedColumnNames="restaurant_id"
                              nullable="false"/>
             </column>
             <column name="dish_id" type="INTEGER">
                 <constraints foreignKeyName="fk_restaurant_dish_link_dish_id"
-                             referencedTableSchemaName="dao"
+                             referencedTableSchemaName="02_dao"
                              referencedTableName="dish"
                              referencedColumnNames="dish_id"
                              nullable="false"/>
             </column>
         </createTable>
-        <addPrimaryKey schemaName="dao" tableName="restaurant_dish_link" columnNames="restaurant_id,dish_id"/>
+        <addPrimaryKey schemaName="02_dao" tableName="restaurant_dish_link" columnNames="restaurant_id,dish_id"/>
 
         <rollback>
-            <dropTable schemaName="dao" tableName="restaurant" cascadeConstraints="true"/>
-            <dropTable schemaName="dao" tableName="review" cascadeConstraints="true"/>
-            <dropTable schemaName="dao" tableName="dish" cascadeConstraints="true"/>
-            <dropTable schemaName="dao" tableName="restaurant_dish_link" cascadeConstraints="true"/>
+            <dropTable schemaName="02_dao" tableName="restaurant" cascadeConstraints="true"/>
+            <dropTable schemaName="02_dao" tableName="review" cascadeConstraints="true"/>
+            <dropTable schemaName="02_dao" tableName="dish" cascadeConstraints="true"/>
+            <dropTable schemaName="02_dao" tableName="restaurant_dish_link" cascadeConstraints="true"/>
         </rollback>
     </changeSet>
 </databaseChangeLog>

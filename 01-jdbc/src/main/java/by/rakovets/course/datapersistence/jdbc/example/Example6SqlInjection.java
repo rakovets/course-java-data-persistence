@@ -3,7 +3,7 @@ package by.rakovets.course.datapersistence.jdbc.example;
 import java.sql.*;
 
 public class Example6SqlInjection {
-    private static final String DATASOURCE_URL = "jdbc:mariadb://localhost:3306/jdbc";
+    private static final String DATASOURCE_URL = "jdbc:mariadb://localhost:3306/01_jdbc";
     private static final String DATASOURCE_USER = "mariadb";
     private static final String DATASOURCE_PASSWORD = "1234567";
 

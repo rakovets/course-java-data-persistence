@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionManager {
-    private static final String DATASOURCE_URL = "jdbc:mariadb://localhost:3306/dao";
+    private static final String DATASOURCE_URL = "jdbc:mariadb://localhost:3306/02_dao";
     private static final String DATASOURCE_USER = "mariadb";
     private static final String DATASOURCE_PASSWORD = "1234567";
 

@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Example4Jdbc {
-    private static final String DATASOURCE_URL = "jdbc:mariadb://localhost:3306/jdbc";
+    private static final String DATASOURCE_URL = "jdbc:mariadb://localhost:3306/01_jdbc";
     private static final String DATASOURCE_USER = "mariadb";
     private static final String DATASOURCE_PASSWORD = "1234567";
 

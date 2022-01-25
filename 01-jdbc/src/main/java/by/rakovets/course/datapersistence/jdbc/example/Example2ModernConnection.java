@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class Example2ModernConnection {
-    private static final String DATASOURCE_URL = "jdbc:mariadb://localhost:3306/jdbc";
+    private static final String DATASOURCE_URL = "jdbc:mariadb://localhost:3306/01_jdbc";
     private static final String DATASOURCE_USER = "mariadb";
     private static final String DATASOURCE_PASSWORD = "1234567";
 

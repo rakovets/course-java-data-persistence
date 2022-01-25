@@ -6,7 +6,7 @@ import java.util.Properties;
 
 public class Example1LegacyConnection {
     private static final String DATASOURCE_DRIVER = "org.mariadb.jdbc.Driver";
-    private static final String DATASOURCE_URL = "jdbc:mariadb://localhost:3306/jdbc";
+    private static final String DATASOURCE_URL = "jdbc:mariadb://localhost:3306/01_jdbc";
     private static final String DATASOURCE_USER = "mariadb";
     private static final String DATASOURCE_PASSWORD = "1234567";
 
