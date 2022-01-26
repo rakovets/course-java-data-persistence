@@ -10,14 +10,14 @@
         <property name="hbm2ddl.auto">create-drop</property>
         <property name="format_sql">true</property>
 
-        <mapping class="by.rakovets.course.datapersistence.mapping.association.hero.entity.Hero"/>
-        <mapping class="by.rakovets.course.datapersistence.mapping.association.hero.entity.Inventory"/>
-        <mapping class="by.rakovets.course.datapersistence.mapping.association.hero.entity.Quest"/>
-        <mapping class="by.rakovets.course.datapersistence.mapping.association.hero.entity.Item"/>
+        <mapping class="by.rakovets.course.datapersistence.example.mapping.association.example2.entity.Hero"/>
+        <mapping class="by.rakovets.course.datapersistence.example.mapping.association.example2.entity.Inventory"/>
+        <mapping class="by.rakovets.course.datapersistence.example.mapping.association.example2.entity.Quest"/>
+        <mapping class="by.rakovets.course.datapersistence.example.mapping.association.example2.entity.Item"/>
 
-        <mapping class="by.rakovets.course.datapersistence.mapping.association.demo.entity.Address"/>
-        <mapping class="by.rakovets.course.datapersistence.mapping.association.demo.entity.Employee"/>
-        <mapping class="by.rakovets.course.datapersistence.mapping.association.demo.entity.Meeting"/>
-        <mapping class="by.rakovets.course.datapersistence.mapping.association.demo.entity.Organization"/>
+        <mapping class="by.rakovets.course.datapersistence.example.mapping.association.example1.entity.Address"/>
+        <mapping class="by.rakovets.course.datapersistence.example.mapping.association.example1.entity.Employee"/>
+        <mapping class="by.rakovets.course.datapersistence.example.mapping.association.example1.entity.Meeting"/>
+        <mapping class="by.rakovets.course.datapersistence.example.mapping.association.example1.entity.Organization"/>
     </session-factory>
 </hibernate-configuration>

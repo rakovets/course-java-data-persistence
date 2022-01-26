@@ -12,9 +12,9 @@
         <property name="hbm2ddl.auto">update</property>
         <property name="format_sql">true</property>
 
-        <mapping class="by.rakovets.course.datapersistence.query.hql.dal.entity.IdentifiableEntity"/>
-        <mapping class="by.rakovets.course.datapersistence.query.hql.dal.entity.Employee"/>
-        <mapping class="by.rakovets.course.datapersistence.query.hql.dal.entity.Organization"/>
-        <mapping class="by.rakovets.course.datapersistence.query.hql.dal.entity.Payment"/>
+        <mapping class="by.rakovets.course.datapersistence.example.query.jpql.entity.IdentifiableEntity"/>
+        <mapping class="by.rakovets.course.datapersistence.example.query.jpql.entity.Employee"/>
+        <mapping class="by.rakovets.course.datapersistence.example.query.jpql.entity.Organization"/>
+        <mapping class="by.rakovets.course.datapersistence.example.query.jpql.entity.Payment"/>
     </session-factory>
 </hibernate-configuration>
