@@ -12,6 +12,8 @@ CREATE SCHEMA IF NOT EXISTS "07_mapping_inheritance";
 CREATE SCHEMA IF NOT EXISTS "08_mapping_relationship";
 CREATE SCHEMA IF NOT EXISTS "09_query_jpql";
 CREATE SCHEMA IF NOT EXISTS "10_query_criteria";
+CREATE SCHEMA IF NOT EXISTS "12_transactions";
+CREATE SCHEMA IF NOT EXISTS "13_cache";
 --rollback DROP SCHEMA "01_jdbc" CASCADE;
 --rollback DROP SCHEMA "02_dao" CASCADE;
 --rollback DROP SCHEMA "03_dbcp" CASCADE;
@@ -22,6 +24,8 @@ CREATE SCHEMA IF NOT EXISTS "10_query_criteria";
 --rollback DROP SCHEMA "08_mapping_relationship" CASCADE;
 --rollback DROP SCHEMA "09_query_jpql" CASCADE;
 --rollback DROP SCHEMA "10_query_criteria" CASCADE;
+--rollback DROP SCHEMA "12_transactions" CASCADE;
+--rollback DROP SCHEMA "13_cache" CASCADE;
 
 --changeset rakovets:database-1 dbms:mariadb
 -- precondition
@@ -35,6 +39,8 @@ CREATE SCHEMA IF NOT EXISTS 07_mapping_inheritance;
 CREATE SCHEMA IF NOT EXISTS 08_mapping_relationship;
 CREATE SCHEMA IF NOT EXISTS 09_query_jpql;
 CREATE SCHEMA IF NOT EXISTS 10_query_criteria;
+CREATE SCHEMA IF NOT EXISTS 12_transactions;
+CREATE SCHEMA IF NOT EXISTS 13_cache;
 --rollback DROP SCHEMA 01_jdbc;
 --rollback DROP SCHEMA 02_dao;
 --rollback DROP SCHEMA 03_dbcp;
@@ -45,6 +51,8 @@ CREATE SCHEMA IF NOT EXISTS 10_query_criteria;
 --rollback DROP SCHEMA 08_mapping_relationship;
 --rollback DROP SCHEMA 09_query_jpql;
 --rollback DROP SCHEMA 10_query_criteria;
+--rollback DROP SCHEMA 12_transactions;
+--rollback DROP SCHEMA 13_cache;
 
 --changeset rakovets:database-2 dbms:mariadb
 GRANT ALL PRIVILEGES ON 01_jdbc.* TO 'mariadb'@'%';
@@ -57,6 +65,8 @@ GRANT ALL PRIVILEGES ON 07_mapping_inheritance.* TO 'mariadb'@'%';
 GRANT ALL PRIVILEGES ON 08_mapping_relationship.* TO 'mariadb'@'%';
 GRANT ALL PRIVILEGES ON 09_query_jpql.* TO 'mariadb'@'%';
 GRANT ALL PRIVILEGES ON 10_query_criteria.* TO 'mariadb'@'%';
+GRANT ALL PRIVILEGES ON 12_transactions.* TO 'mariadb'@'%';
+GRANT ALL PRIVILEGES ON 13_cache.* TO 'mariadb'@'%';
 --rollback REVOKE ALL PRIVILEGES ON 01_jdbc.* FROM 'mariadb'@'%';
 --rollback REVOKE ALL PRIVILEGES ON 02_dao.* FROM 'mariadb'@'%';
 --rollback REVOKE ALL PRIVILEGES ON 03_dbcp.* FROM 'mariadb'@'%';
@@ -67,3 +77,5 @@ GRANT ALL PRIVILEGES ON 10_query_criteria.* TO 'mariadb'@'%';
 --rollback REVOKE ALL PRIVILEGES ON 08_mapping_relationship.* FROM 'mariadb'@'%';
 --rollback REVOKE ALL PRIVILEGES ON 09_query_jpql.* FROM 'mariadb'@'%';
 --rollback REVOKE ALL PRIVILEGES ON 10_query_criteria.* FROM 'mariadb'@'%';
+--rollback REVOKE ALL PRIVILEGES ON 12_transactions.* FROM 'mariadb'@'%';
+--rollback REVOKE ALL PRIVILEGES ON 13_cache.* FROM 'mariadb'@'%';
