@@ -37,7 +37,7 @@ Course "Data Persistence in Java"
 |`08-mapping-relationship`|Mapping of Relationship|In progress
 |`09-query-jpql`|Queries with *Java Persistence Queries Language* (*JPQL*)|In progress
 |`10-query-criteria`|Queries with *Criteria API*|In progress
-|`11-db-migration`|DM migration with Liquibase|In progress
+|`14-db-migration`|DM migration with Liquibase|In progress
 |===
 
 == Code of Conduct

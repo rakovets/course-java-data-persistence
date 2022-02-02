@@ -20,6 +20,6 @@
         <module>08-mapping-relationship</module>
         <module>09-query-jpql</module>
         <module>10-query-criteria</module>
-        <module>11-db-migration</module>
+        <module>14-db-migration</module>
     </modules>
 </project>

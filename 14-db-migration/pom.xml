@@ -10,8 +10,8 @@
     </parent>
 
     <groupId>by.rakovets.course.java.data-persistence</groupId>
-    <artifactId>11-db-migration</artifactId>
-    <name>Theme 11: "DB migration"</name>
+    <artifactId>14-db-migration</artifactId>
+    <name>Theme 14: "DB migration"</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
