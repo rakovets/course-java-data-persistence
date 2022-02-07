@@ -35,8 +35,9 @@ Course "Data Persistence in Java"
 |`06-mapping-basic`|Basic Mapping|link:./06-mapping-basic/src/main/resources/mapping-basic.adoc[mapping-basic.adoc]
 |`07-mapping-inheritance`|Mapping of Inheritance|link:./07-mapping-inheritance/src/main/resources/mapping-inheritance.adoc[mapping-inheritance.adoc]
 |`08-mapping-relationship`|Mapping of Relationship|link:./08-mapping-relationship/src/main/resources/mapping-relationship.adoc[mapping-relationship.adoc]
-|`09-query-jpql`|Queries with *Java Persistence Queries Language* (*JPQL*)|link:./09-query-jpql/src/main/resources/query-jpql.adoc[query-jpql.adoc]
-|`10-query-criteria`|Queries with *Criteria API*|link:./10-query-criteria/src/main/resources/query-criteria.adoc[query-criteria.adoc]
+|`09-query-native`|Queries with Native SQL|In progress
+|`10-query-jpql`|Queries with *Java Persistence Queries Language* (*JPQL*)|link:./10-query-jpql/src/main/resources/query-jpql.adoc[query-jpql.adoc]
+|`11-query-criteria`|Queries with *Criteria API*|link:./11-query-criteria/src/main/resources/query-criteria.adoc[query-criteria.adoc]
 |`12-transactions`|Transactions|In progress
 |`13-cache`|Cache|In progress
 |`14-db-migration`|DM migration with Liquibase|In progress

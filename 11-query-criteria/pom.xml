@@ -11,8 +11,8 @@
     </parent>
 
     <groupId>by.rakovets.course.datapersistence</groupId>
-    <artifactId>10-query-criteria</artifactId>
-    <name>Theme 10: "Queries with Criteria API"</name>
+    <artifactId>11-query-criteria</artifactId>
+    <name>Theme 11: "Queries with Criteria API"</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
