@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache>
+    <defaultCache maxEntriesLocalHeap="20"
+                  eternal="false"
+                  timeToIdleSeconds="120"
+                  timeToLiveSeconds="200"
+                  memoryStoreEvictionPolicy="LRU"/>
+    <cache name="by.rakovets.course.datapersistence.example.cache.entity.Employee"
+           maxElementsInMemory="1000">
+    </cache>
+    <cache name="org.hibernate.cache.StandardQueryCache"
+           maxEntriesLocalHeap="5"
+           eternal="false"
+           timeToLiveSeconds="120">
+        <persistence strategy="localTempSwap"/>
+    </cache>
+</ehcache>

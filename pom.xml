@@ -21,6 +21,7 @@
         <module>09-query-jpql</module>
         <module>10-query-criteria</module>
         <module>12-transactions</module>
+        <module>13-cache</module>
         <module>14-db-migration</module>
     </modules>
 </project>
