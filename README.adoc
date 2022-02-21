@@ -6,6 +6,9 @@ Course "Data Persistence in Java"
 
 * Описать структуру проекта.
 * Реализовать сквозные задания для общего проекта *User Management System*
+* Возможные темы для добавления:
+** Criteria Queries Using JPA Metamodel
+** QueryDSL - Unified Queries for Java
 
 == Tools
 
